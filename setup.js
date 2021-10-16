@@ -1,4 +1,4 @@
-var patches = [ 
+let patches = [ 
 	1, 2, 3, 4, 5, 7, 8, 9, 10, 
 	11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
 	21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 
@@ -7,9 +7,9 @@ var patches = [
 
 const tinyPatch = 6;
 
-var patches_selected = new Array();
+let patches_selected = new Array();
 
-var selected = "";
+let selected = false;
 
 main();
 
@@ -22,9 +22,9 @@ function main(){
 
 
 function drawSetup(){
-	var setup = "";
-	var isSelectionDrawed = false;
-	var count_get_button = 0;
+	let setup = "";
+	let isSelectionDrawed = false;
+	let count_get_button = 0;
 
 	for(i in patches){
 		if(count_get_button > 2){
@@ -47,7 +47,7 @@ function drawSetup(){
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+	let currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -79,7 +79,7 @@ function pass(){
 	if(selected){
 		patches_selected.push(selected.id);
 
-		var kill_id = -1;
+		let kill_id = -1;
 
 		for(x in patches){
 			if(patches[x] == selected.id){
@@ -107,7 +107,7 @@ function pass(){
 }
 
 function fixSort(){
-	var new_patches = [];
+	let new_patches = [];
 
 	for(x in patches){
 		new_patches.push(patches[x])
