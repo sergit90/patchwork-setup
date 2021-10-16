@@ -1,9 +1,11 @@
 var patches = [ 
-	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+	1, 2, 3, 4, 5, 7, 8, 9, 10, 
 	11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
 	21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 
 	31, 32, 33 
 ];
+
+const tinyPatch = 6;
 
 var patches_selected = new Array();
 
@@ -13,36 +15,34 @@ main();
 
 function main(){
 	patches = shuffle(patches);
+	patches.push(tinyPatch);
 	drawSetup();	
 }
+
+
 
 function drawSetup(){
 	var setup = "";
 	var isSelectionDrawed = false;
 	var count_get_button = 0;
 
-	setup += "<input type='button'  onclick='pass()' value='Pasar turno' /><br />";
-
 	for(i in patches){
 		if(count_get_button > 2){
-			setup += "<img id='" + patches[i] + "' src='img/" + patches[i] + ".png' />";
+			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".png' /></div>";
 		}else{
-			setup += "<img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' />";
+			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' /></div>";
 		}
 
 		count_get_button++;
 
 		if((i+1) % 3 === 0){
-			setup += "<br />";
-
 			if(!isSelectionDrawed){
-				setup += "<hr class='separation' />";
 				isSelectionDrawed = true;
 			}
 		}
 	}
 
-	$('body').html(setup);
+	$('#patches').html(setup);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -96,6 +96,8 @@ function pass(){
 
 			delete patches[kill_id];
 		}
+
+		selected = false;
 	}else{
 		alert("Selecciona un parche");
 	}
@@ -113,4 +115,8 @@ function fixSort(){
 
 	patches = [];
 	patches = new_patches;
+}
+
+window.onbeforeunload = () => {
+	return "Refresh";
 }

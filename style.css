@@ -1,34 +1,64 @@
-body{
-    height: 300px;
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+html {
+    background-color: #431907;
+    background-image: url('./img/paper.jpg');
+    background-repeat: round;
+    box-shadow:inset 0 0 0 2000px rgba(67, 25, 7, 0.9);
+}
+
+.setup{
     max-width: 100vh;
     margin: 0 auto;
-    overflow: auto;
-    white-space: nowrap;
-    text-align: center;
+    min-height: 100vh;
+    max-height: 300vh;
 }
 
-img{
-    display: inline-block;
-    border: 1px solid #f2f2f2;
-    margin-right: 15px;
-    height: 50%;
-      object-position: center;
+.patches{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-input{
+.gap{
+    display: flex;
+    flex-basis: 33.333333%;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    height: 100px;
+    margin: 10px 0;
+}
+
+img {
+    border: 1px solid #13010079;
+    border-radius: 10px;
     width: 100%;
-    height: 50px;
-    background-color: #63BEDF;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    
+}
+
+.pass__b-pass {
+    width: 100%;
+    height: 70px;
+    background-color: #E7B661;
     border: none;
     color:#371208;
-    font-weight: bold;
     padding: 15px 32px;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-bottom: 2px solid black;
+    font-size: 25px;
     margin: 10px 0 20px 0;
-    border-radius: 5px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'Titan One';
+    /*#b16c13*/
+    box-shadow: 0px 10px 0px 0px #b16c13;
+}
+
+input:active{
+    box-shadow: none;
+    transform: translateY(10px);
+    cursor: none;
 }
 
 .separation{
