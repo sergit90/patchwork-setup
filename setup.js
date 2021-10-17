@@ -30,7 +30,7 @@ function drawSetup(){
 		if(count_get_button > 2){
 			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".png' /></div>";
 		}else{
-			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' /></div>";
+			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' class='choices' /></div>";
 		}
 
 		count_get_button++;
@@ -68,11 +68,12 @@ function shuffle(array) {
 function getPatch(element){
 	if(selected){
 		$(selected).css({ opacity: 100 });
+		selected.classList.remove('selected');
 	}
 
 	selected = element;
 
-	$(element).css({ opacity: 0.25 });
+	selected.classList.add('selected');
 }
 
 function pass(){
@@ -99,7 +100,7 @@ function pass(){
 
 		selected = false;
 	}else{
-		alert("Selecciona un parche");
+		alert("Choose a patch!");
 	}
 
 	fixSort();

@@ -64,3 +64,14 @@ input:active{
 .separation{
     padding: 10px 0;
 }
+
+.selected{
+    border: 2px solid #E7B661;
+    box-shadow: 0px 10px 0px 0px #b16c13;
+    transform: translateY(-10px);
+}
+
+.choices{
+    background-color: #a19e9936;
+    border-radius: 11px;
+}
