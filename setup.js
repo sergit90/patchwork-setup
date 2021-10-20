@@ -6,6 +6,7 @@ let patches = [
 ];
 
 const tinyPatch = 6;
+const b_pass = document.getElementById("pass");
 
 let patches_selected = new Array();
 
@@ -70,9 +71,10 @@ function getPatch(element){
 		$(selected).css({ opacity: 100 });
 		selected.classList.remove('selected');
 	}
-
+	
 	selected = element;
-
+	
+	b_pass.classList.remove('disabled');
 	selected.classList.add('selected');
 }
 
@@ -99,8 +101,7 @@ function pass(){
 		}
 
 		selected = false;
-	}else{
-		alert("Choose a patch!");
+		b_pass.classList.add('disabled');
 	}
 
 	fixSort();
