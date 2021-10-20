@@ -6,6 +6,7 @@ let patches = [
 ];
 
 const tinyPatch = 6;
+const div_patches = document.getElementById("patches");
 const b_pass = document.getElementById("pass");
 
 let patches_selected = new Array();
@@ -43,7 +44,7 @@ function drawSetup(){
 		}
 	}
 
-	$('#patches').html(setup);
+	div_patches.innerHTML = setup;
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -68,7 +69,6 @@ function shuffle(array) {
 
 function getPatch(element){
 	if(selected){
-		$(selected).css({ opacity: 100 });
 		selected.classList.remove('selected');
 	}
 	
