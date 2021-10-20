@@ -29,9 +29,9 @@ function drawSetup(){
 
 	for(i in patches){
 		if(count_get_button > 2){
-			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".png' /></div>";
+			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".png' loading='lazy' /></div>";
 		}else{
-			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' class='choices' /></div>";
+			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".png' class='choices' loading='lazy' /></div>";
 		}
 
 		count_get_button++;
