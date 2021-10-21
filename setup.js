@@ -30,7 +30,7 @@ function drawSetup(){
 
 	for(i in patches){
 		if(count_get_button > 2){
-			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".webp' 'Patch' /></div>";
+			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".webp' alt='Patch' /></div>";
 		}else{
 			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".webp' class='choices' alt='Patch' /></div>";
 		}
