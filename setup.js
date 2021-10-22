@@ -24,27 +24,38 @@ function main(){
 
 
 function drawSetup(){
-	let setup = "";
 	let isSelectionDrawed = false;
 	let count_get_button = 0;
 
-	for(i in patches){
-		if(count_get_button > 2){
-			setup += "<div class='gap'><img id='" + patches[i] + "' src='img/" + patches[i] + ".webp' alt='Patch' /></div>";
-		}else{
-			setup += "<div class='gap'><img id='" + patches[i] + "' onclick='getPatch(this)' src='img/" + patches[i] + ".webp' class='choices' alt='Patch' /></div>";
+	div_patches.innerHTML = '';
+
+	for(let tile in patches){
+		const gap = document.createElement('div');
+		gap.className = 'gap';
+
+		const patch = document.createElement('img');
+		patch.id = patches[tile];
+		patch.src = 'img/' + patches[tile] + '.webp';
+		patch.alt = 'Patch';
+
+		if(count_get_button < 3){
+			patch.className = 'choices';
+			patch.setAttribute("onclick", "getPatch(this)");
 		}
+
+		gap.appendChild(patch);
 
 		count_get_button++;
 
-		if((i+1) % 3 === 0){
+		if((tile+1) % 3 === 0){
 			if(!isSelectionDrawed){
 				isSelectionDrawed = true;
 			}
 		}
+
+		div_patches.appendChild(gap);
 	}
 
-	div_patches.innerHTML = setup;
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
