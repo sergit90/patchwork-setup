@@ -94,3 +94,9 @@ input:active{
     cursor: not-allowed;
     pointer-events: none;
 }
+
+footer{
+    font-size: 0.8em;
+    text-align: center;
+    color: #e7b6613f
+}
