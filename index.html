@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Patchwork - Virtual Set-Up">
-	
-	<title>PATCHWORK-STP</title>
-	
-	<link rel="stylesheet" href="style.css" >
-	
-	<script type="text/javascript" src="setup.js" defer></script>
-	
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/site.webmanifest">
-	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-</head>
-<body>
-	<div id="setup" class="setup">
-		<div class="pass">
-			<input id="pass" class="pass__b-pass disabled" type='button' onclick="pass()" value='Take Patch' />
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Patchwork - Virtual Set-Up" />
 
-		<div id="patches" class="patches"></div>
-	</div>
+    <title>PATCHWORK-STP</title>
 
-	<footer>
-		All images are extracted from the boardgame "<strong>Patchwork</strong>"
-		<br/>
-		A game designed by: <strong>Uwe Rosenberg</strong>.
-		<br/>
-		Art by: <strong>Klemens Franz, Rex Lee, Gru Tsow</strong>.
-	</footer>
-</body>
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="app/main.js"></script>
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+  </head>
+  <body>
+    <div id="setup" class="setup">
+      <div class="pass">
+        <input
+          id="pass"
+          class="pass__b-pass disabled"
+          type="button"
+          value="Take Patch"
+        />
+      </div>
+
+      <div id="patches" class="patches"></div>
+    </div>
+
+    <footer>
+      All images are extracted from the boardgame "<strong>Patchwork</strong>"
+      <br />
+      A game designed by: <strong>Uwe Rosenberg</strong>.
+      <br />
+      Art by: <strong>Klemens Franz, Rex Lee, Gru Tsow</strong>.
+    </footer>
+  </body>
 </html>
